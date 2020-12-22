@@ -5,7 +5,7 @@ from src.ApiCalls.CreateCustomers import CreateCustomer
 from src.DataAccess.customer_data import CustomerData
 
 
-@pytest.mark.tcid1
+@pytest.mark.tcid_1
 def test_create_custome_only_username_email():
 
     logger.info("Creating customers")
@@ -36,4 +36,9 @@ def test_create_custome_only_username_email():
     # Verify email and username with DB
     assert rtn_sql[0]['user_email'] == email, f"Expected Email: {email} but found {rtn_sql[0]['user_email']}"
     assert rtn_sql[0]['user_login'] == username, f"Expected username: {username} but found {rtn_sql[0]['username']}"
+
+
+@pytest.mark.tcid_2
+def test_create_customer_fname_laname():
+    pass
 
